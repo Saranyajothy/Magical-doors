@@ -1,7 +1,9 @@
-# Write your code to expect a terminal of 80 characters wide and 24 rows high
+"""
+Magical door game
+"""
+import time
 import gspread
 from google.oauth2.service_account import Credentials
-import time
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
     "https://www.googleapis.com/auth/drive.file",
@@ -10,21 +12,20 @@ SCOPE = [
 
 CREDS = Credentials.from_service_account_file('creds.json')
 SCOPED_CREDS = CREDS.with_scopes(SCOPE)
-GSPREAD_PLAYER = gspread.authorize(SCOPED_CREDS)
-SHEET = GSPREAD_PLAYER.open('Magical-doors')
+GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
+SHEET = GSPREAD_CLIENT.open('magical_doors')
 
-# winners = SHEET.worksheet('winners')
 
-# data = winners.get_all_values(
+# WINNERS = SHEET.worksheet('winners')
 
-# print(data) 
+# data = winners.get_all_values()
 
 print("Welcome to the Magical door")
 name = input("Please enter your name to play the game:\n")
 print("Hi", name)
-print("Are you ready to win your tons of treasures behind the magical door?\n ")
+print("Are you ready to win your tons of treasures behind the magical door?\n ")  # noqa: E501
 answer = input("Type YES or NO: \n ")
-if answer == "yes":
+if answer in ('y', 'yes'):
     print("You are on the dead end of the road")
     time.sleep(1)
     print("Now you have two options to choose your path right or left,")
@@ -34,7 +35,7 @@ if answer == "yes":
     if answer == "right":
         print("This path lead you to the enchanted forest.")
         print("The trees are chanting the mantra,")
-        answer = input("Is that 1.Divine power or 2.Magical power? Type 1 or 2: \n ")
+        answer = input("Is that 1.Divine power or 2.Magical power? Type 1 or 2: \n ")  # noqa: E501
         if answer == "1":
             print("You chosen the right option.")
             print("The portal is opening for you")
@@ -42,58 +43,66 @@ if answer == "yes":
             if answer == "enter":
                 print("you entered the new world full of magical creatures")
                 print("There are two dragons, Blue and white to choose from.")
-                print("The dragon will take you to a ride to the final destination.")
+                print("The dragon will take you to a ride to the final destination.")  # noqa: E501
                 answer = input("Type 'Blue' or 'White': \n  ")
                 if answer == "white":
-                    print("white dragon took you across the seven mountains and seven seas")
-                    answer = input("In the seven seas there is a beautiful gigantic fish with glittering gold scales that holds the key for the magic door. find the key? select the option - 1,2,3,4,5,6,7: \n ")
-                    if answer == "5":
-                        print("Hurrah you got the key from the golden fish and the dragon dropped you in the destination")
-                        answer = input("Infront of the door there is a sharp wooden fence and if you want to open the door you need to charge the key. Only way to reach the door and charge the key is to burn the fence. How do you get the fire to burn the fence and charge the key? Guess and Give one word answer:\n  ")
+                    print("white dragon took you across the seven mountains and seven seas")  # noqa: E501
+                    answer = input("In the seven seas there is a beautiful gigantic fish with glittering gold scales that holds the key for the magic door. find the key? select the option - 1,2,3,4,5,6,7: \n ")  # noqa: E501
+                    if answer in ('5', '3', '1'):
+                        print("Hurrah you got the key from the golden fish")
+                        print("the dragon dropped you in the destination")
+                        print("Infront of the door there is a sharp wooden fence")  # noqa: E501
+                        print("If you want to open the door you need to charge the key.")  # noqa: E501
+                        print("Only way to reach the door and charge the key is to burn the fence.")  # noqa: E501
+                        answer = input("How do you get the fire to burn the fence and charge the key? Dragon or match box")  # noqa: E501
                         if answer == "dragon":
-                            print("You burnt the fence and charged the key. now the key the  magical power to open the magical door")
-                            print("Congratulations you opened the magical door, there is tons and tons of gold, diamond, silver glitters like thunderlight")
-                            print("This precious treasure is all yours, you played brillantly, well done")
+                            print("You burnt the fence and charged the key.")
+                            print("Now the key the  magical power to open the magical door")  # noqa: E501
+                            print("Congratulations you opened the magical door, there is tons and tons of gold, diamond, silver glitters like thunderlight")  # noqa: E501
+                            print("This precious treasure is all yours, you played brillantly, well done")  # noqa: E501
                             print("Hope you enjoyed the game")
-                            answer = input("If you like the game give thumps up by typing the number '1' if not type '2': \n")
+                            answer = input("If you like the game give thumps up by typing the number '1' if not type '2': \n")  # noqa: E501
                             if answer == "1":
                                 print("Thank you for your valuable comment")
                             elif answer == "2":
-                                print("Thanks for your feedback, we will try to improve the game")
+                                print("Thanks for your feedback, we will try to improve the game")  # noqa: E501
                             else:
                                 print("Not a valid option")
                         else:
-                            print("sorry you lose the game")    
+                            print("sorry you lose the game")
                     elif answer == "1,2,3,4,6,7":
-                            print("sorry you entered the wrong option, you lose the game ")
+                        print("sorry you entered the wrong option, you lose the game ")  # noqa: E501
                     else:
                         print("Not a valid option, you lose")
                 elif answer == "Blue":
                     print("")
-                else:  
-                    print("Not a valid option, you lose")        
+                else:
+                    print("Not a valid option, you lose")
         elif answer == "2":
             print("The divine holds the magical door")
             print("you entered the magical world and you lost your memory.")
             print("you lose the game.")
-        else:  
-            print("Not a valid option, you lose")  
+        else:
+            print("Not a valid option, you lose")
     elif answer == "left":
-        answer = input("you come to the river, you can walk around or you can swim across the river? walk/swim: \n ")
+        answer = input("you come to the river, you can walk around or you can swim across the river? walk/swim: \n ")  # noqa: E501
         if answer == "walk":
-            print("you walked for my miles and ran out of water and food, you died out of starving.")
+            print("you walked for my miles and ran out of water and food, you died out of starving.")  # noqa: E501
         elif answer == "swim":
             print("you swam across and were eaten by an alligators.")
             print("you lose the game.")
             print("Play again to find the treasure, good luck.")
         else:
-            print("Not a valid option, you lose")    
-    else: 
-        print("Not a valid option, you lose")     
-elif answer == "no":
+            print("Not a valid option, you lose")
+    else:
+        print("Not a valid option, you lose")
+elif answer in ('n', 'no'):
     print("Sorry you missed the treasure to your family, see you next time")
 
-else: 
-    print("Not a valid option, you lose")  
+else:
+    print("Not a valid option, you lose")
 
-
+WINNERS = SHEET.worksheet('winners')
+user = [name]
+WINNERS.append_row(user)
+results = WINNERS.get_all_values()
