@@ -58,8 +58,10 @@ if answer in ('y', 'yes'):
                         print("Infront of the door there is a sharp wooden fence")  # noqa: E501
                         print("If you want to open the door")
                         print("you need to charge the key.")
-                        print("Only way to reach the door and charge the key is to burn the fence.")  # noqa: E501
-                        answer = input("How do you get the fire to burn the fence and charge the key? Dragon or match box")  # noqa: E501
+                        print("Only way to reach the door")
+                        print("And charge the key is to burn the fence.")
+                        print("How do you get the fire to burn the fence and charge the key?")  # noqa: E501
+                        answer = input("Dragon or match box?")
                         if answer == "dragon":
                             print("You burnt the fence and charged the key.")
                             print("Now the key the  magical power to open the magical door")  # noqa: E501
