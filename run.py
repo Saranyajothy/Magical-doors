@@ -46,13 +46,18 @@ if answer in ('y', 'yes'):
                 print("The dragon will take you to a ride to the final destination.")  # noqa: E501
                 answer = input("Type 'Blue' or 'White': \n  ")
                 if answer == "white":
-                    print("white dragon took you across the seven mountains and seven seas")  # noqa: E501
-                    answer = input("In the seven seas there is a beautiful gigantic fish with glittering gold scales that holds the key for the magic door. find the key? select the option - 1,2,3,4,5,6,7: \n ")  # noqa: E501
+                    print("Dragon took you across the seven mountains and seven seas")  # noqa: E501
+                    print("In the seven seas there is a beautiful gigantic fish.")  # noqa: E501
+                    print("It has glittering golden scales")
+                    print("That holds the key for the magic door.")
+                    print("For Finding the key? ")
+                    answer = input("Select the option - 1,2,3,4,5,6,7: \n ")
                     if answer in ('5', '3', '1'):
                         print("Hurrah you got the key from the golden fish")
-                        print("the dragon dropped you in the destination")
+                        print("The dragon dropped you in the destination")
                         print("Infront of the door there is a sharp wooden fence")  # noqa: E501
-                        print("If you want to open the door you need to charge the key.")  # noqa: E501
+                        print("If you want to open the door")
+                        print("you need to charge the key.")
                         print("Only way to reach the door and charge the key is to burn the fence.")  # noqa: E501
                         answer = input("How do you get the fire to burn the fence and charge the key? Dragon or match box")  # noqa: E501
                         if answer == "dragon":
