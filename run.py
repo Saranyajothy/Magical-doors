@@ -13,7 +13,7 @@ SCOPE = [
 CREDS = Credentials.from_service_account_file('creds.json')
 SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
-SHEET = GSPREAD_CLIENT.open('magical_doors')
+SHEET = GSPREAD_CLIENT.open('magical_door')
 
 
 # WINNERS = SHEET.worksheet('winners')
@@ -60,15 +60,19 @@ if answer in ('y', 'yes'):
                         print("you need to charge the key.")
                         print("Only way to reach the door")
                         print("And charge the key is to burn the fence.")
-                        print("How do you get the fire to burn the fence and charge the key?")  # noqa: E501
+                        print("How do you get the fire to burn and charge?")  # noqa: E501
                         answer = input("Dragon or match box?")
                         if answer == "dragon":
                             print("You burnt the fence and charged the key.")
                             print("Now the key the  magical power to open the magical door")  # noqa: E501
-                            print("Congratulations you opened the magical door, there is tons and tons of gold, diamond, silver glitters like thunderlight")  # noqa: E501
-                            print("This precious treasure is all yours, you played brillantly, well done")  # noqa: E501
+                            print("Congratulations you opened the door")
+                            print("There is tons of gold, diamond, silver")
+                            print("that glitters like a thunderlight")
+                            print("Well done, you played brillantly")
+                            print("The winner is", name)
                             print("Hope you enjoyed the game")
-                            answer = input("If you like the game give thumps up by typing the number '1' if not type '2': \n")  # noqa: E501
+                            print("If you like the game")
+                            answer = input("give thumps up by typing the number '1' if not type '2': \n")  # noqa: E501
                             if answer == "1":
                                 print("Thank you for your valuable comment")
                             elif answer == "2":
@@ -82,7 +86,7 @@ if answer in ('y', 'yes'):
                     else:
                         print("Not a valid option, you lose")
                 elif answer == "Blue":
-                    print("")
+                    print("Sorry your answer is wrong, try again")
                 else:
                     print("Not a valid option, you lose")
         elif answer == "2":
