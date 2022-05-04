@@ -10,17 +10,20 @@ SCOPE = [
     "https://www.googleapis.com/auth/drive.file",
     "https://www.googleapis.com/auth/drive"
     ]
+
 CREDS = Credentials.from_service_account_file('creds.json')
 SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('magical_doors')
+
+WINNERS = SHEET.worksheet('winners')
 
 print("Welcome to the Magical door")
 name = input("Please enter your name to play the game:\n")
 print("Hi", name)
 print("Are you ready to win your tons of treasures behind the magical door?\n ")  # noqa: E501
 answer = input("Type YES or NO: \n ")
-if answer in ('y', 'yes'):
+if answer in ('y', 'yes', 'Y', 'Yes'):
     print("You are on the dead end of the road")
     time.sleep(2)
     print("Now you have two options to choose your path right or left,")
@@ -44,7 +47,7 @@ if answer in ('y', 'yes'):
                 time.sleep(2)
                 print("There are two dragons, Blue and white to choose from.")
                 time.sleep(2)
-                print("The dragon will take you to a ride to the final destination.")  # noqa: E501
+                print("The dragon will take you a ride to the final destination.")  # noqa: E501
                 time.sleep(2)
                 answer = input("Type 'Blue' or 'White': \n  ")
                 if answer == "white":
@@ -77,32 +80,35 @@ if answer in ('y', 'yes'):
                         print("How do you get the fire to burn and charge?")
                         time.sleep(2)
                         answer = input("Dragon fire or match box? \n")
-                        if answer in ('dragon fire', 'fire', 'dragon'):
+                        if answer in ('dragon fire', 'dragon'):
                             print("Yes you used the dragon fire")
                             print("To burnt the fence and charged the key.")
                             time.sleep(2)
                             print("Now you can open the magical door")
                             time.sleep(2)
-                            print("Congratulations you opened the door")
+                            print("CONGRATULATIONS you opened the door")
                             time.sleep(2)
-                            print("There is tons of gold, diamond, silver")
+                            print("There is tons of Gold, Diamond and Platinum")  # noqa: E501
                             time.sleep(2)
                             print("that glitters like a thunderlight")
+                            print("Which precious item would you like to choose?")  # noqa: E501
                             time.sleep(2)
-                            print("Well done, you played brillantly")
-                            time.sleep(2)
-                            print("The winner is", name)
-                            print("Hope you enjoyed the game")
-                            time.sleep(2)
-                            print("If you like the game")
-                            print("Give thumbs up!!!")
-                            answer = input("By typing the number'1'if not type'2':\n")  # noqa: E501
-                            if answer == "1":
-                                print("Thanks for your valuable comment")
-                            elif answer == "2":
-                                print("Thanks for your feedback,")
-                            else:
-                                print("Not a valid option")
+                            answer5 = input("Gold, Diamond, Platinum : \n ")
+                            if answer5 in ('Gold', 'Diamond', 'Platinum'):
+                                print("Well done", name + " You're the winner!")   # noqa: E501
+                                print("Take your treasure to your home and enjoy!!!")   # noqa: E501
+                                time.sleep(2)
+                                print("Hope you enjoyed the game")
+                                time.sleep(2)
+                                print("If you like the game")
+                                print("Give thumbs up!!!")
+                                answer = input("Type the number '1' or '2':\n")
+                                if answer == "1":
+                                    print("Thanks for your valuable comment")
+                                elif answer == "2":
+                                    print("Thanks for your feedback,")
+                                else:
+                                    print("Not a valid option")
                         elif answer == "match box":
                             print("sorry you lost the game, play again")
                         else:
@@ -158,7 +164,15 @@ elif answer in ('n', 'no'):
 
 else:
     print("Not a valid option, you lose")
-WINNERS = SHEET.worksheet('winners')
-user = [name]
+
+user = [name, answer5]
 WINNERS.append_row(user)
 results = WINNERS.get_all_values()
+
+
+
+
+# result_1 = sorted(results[1:], resverse=True)[:2]
+# for result in results:
+
+# print(name + "wins" + results[1])
