@@ -79,8 +79,8 @@ if answer in ('y', 'yes', 'Y', 'Yes'):
                         time.sleep(2)
                         print("How do you get the fire to burn and charge?")
                         time.sleep(2)
-                        answer = input("Dragon fire or match box? \n")
-                        if answer in ('dragon fire', 'dragon'):
+                        answer1 = input("Dragon fire or match box? \n")
+                        if answe in ('dragon fire', 'dragon'):
                             print("Yes you used the dragon fire")
                             print("To burnt the fence and charged the key.")
                             time.sleep(2)
@@ -93,8 +93,8 @@ if answer in ('y', 'yes', 'Y', 'Yes'):
                             print("that glitters like a thunderlight")
                             print("Which precious item would you like to choose?")  # noqa: E501
                             time.sleep(2)
-                            answer5 = input("Gold, Diamond, Platinum : \n ")
-                            if answer5 in ('Gold', 'Diamond', 'Platinum'):
+                            answer1 = input("Gold, Diamond, Platinum : \n ")
+                            if answer1 in ('Gold', 'Diamond', 'Platinum', 'gold', 'diamond', 'platinum'):
                                 print("Well done", name + " You're the winner!")   # noqa: E501
                                 print("Take your treasure to your home and enjoy!!!")   # noqa: E501
                                 time.sleep(2)
@@ -107,8 +107,8 @@ if answer in ('y', 'yes', 'Y', 'Yes'):
                                     print("Thanks for your valuable comment")
                                 elif answer == "2":
                                     print("Thanks for your feedback,")
-                                else:
-                                    print("Not a valid option")
+                            else:
+                                print("lost")
                         elif answer == "match box":
                             print("sorry you lost the game, play again")
                         else:
@@ -165,14 +165,10 @@ elif answer in ('n', 'no'):
 else:
     print("Not a valid option, you lose")
 
-user = [name, answer5]
+user = [name, answer1]
 WINNERS.append_row(user)
-results = WINNERS.get_all_values()
+results = WINNERS.get_values()
 
 
-
-
-# result_1 = sorted(results[1:], resverse=True)[:2]
-# for result in results:
-
-# print(name + "wins" + results[1])
+# # for result in results:
+# print(name,  " wins ",  results)
