@@ -104,7 +104,7 @@ if answer in ('y', 'yes'):
                             else:
                                 print("Not a valid option")
                         elif answer == "match box":
-                            print("sorry you lost the game, play again")        
+                            print("sorry you lost the game, play again")
                         else:
                             print("sorry you lose the game")
                     elif answer == "2,4,6,7":
@@ -158,7 +158,6 @@ elif answer in ('n', 'no'):
 
 else:
     print("Not a valid option, you lose")
-    
 WINNERS = SHEET.worksheet('winners')
 user = [name]
 WINNERS.append_row(user)
