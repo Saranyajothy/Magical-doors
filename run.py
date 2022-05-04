@@ -17,11 +17,6 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('magical_doors')
 
-
-WINNERS = SHEET.worksheet('winners')
-
-# data = winners.get_all_values()
-
 print("Welcome to the Magical door")
 name = input("Please enter your name to play the game:\n")
 print("Hi", name)
@@ -85,7 +80,7 @@ if answer in ('y', 'yes'):
                         time.sleep(2)
                         answer = input("Dragon fire or match box? \n")
                         if answer in ('dragon fire', 'fire', 'dragon'):
-                            print("Yes you use the dragon fire")
+                            print("Yes you used the dragon fire")
                             print("To burnt the fence and charged the key.")
                             time.sleep(2)
                             print("Now you can open the magical door")
@@ -165,7 +160,8 @@ elif answer in ('n', 'no'):
 
 else:
     print("Not a valid option, you lose")
-
+    
+WINNERS = SHEET.worksheet('winners')
 user = [name]
 WINNERS.append_row(user)
 results = WINNERS.get_all_values()
