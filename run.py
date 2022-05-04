@@ -15,7 +15,7 @@ creds = json.load(open('creds.json'))
 CREDS = Credentials.from_service_account_file('creds.json')
 SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
-SHEET = GSPREAD_CLIENT.open('magical_door')
+SHEET = GSPREAD_CLIENT.open('magical_doors')
 
 
 # WINNERS = SHEET.worksheet('winners')
@@ -83,7 +83,7 @@ if answer in ('y', 'yes'):
                         time.sleep(1)
                         print("How do you get the fire to burn and charge?")
                         time.sleep(1)
-                        answer = input("Dragon or match box?")
+                        answer = input("Dragon fire or match box? \n")
                         if answer == "dragon":
                             print("Yes you use the dragon fire")
                             print("To burnt the fence and charged the key.")
