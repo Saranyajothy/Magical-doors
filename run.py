@@ -50,7 +50,7 @@ print("Hi", name)
 print("Are you ready to win your tons of treasures behind the magical door?\n ")  # noqa: E501
 answer = input("Type YES or NO: \n ")
 if answer in ('y', 'yes', 'Y', 'Yes'):
-    print("You are on the dead end of the road")
+    print("You are on the dead end of the straight road")
     time.sleep(2)
     print("Now you have two options to choose your path right or left,")
     answer = input("which path would you like to go? \n")
