@@ -18,7 +18,33 @@ SHEET = GSPREAD_CLIENT.open('magical_doors')
 
 WINNERS = SHEET.worksheet('winners')
 
-print("Welcome to the Magical door")
+
+# def print_welcome_msg():
+#     """
+#     Prints a welcome message to the terminal.
+#     """
+#     print("\n")
+#     print("Welcome to the Magical door\n")
+#     name = input("Please enter your name to play the game:\n")
+
+#     print("Hi", name)
+
+
+print("       Welcome to the Magical door")
+print("                   ((*)) ")
+print("                 ((* * *))    ")
+print("               ((* * * * *))    ")
+print("             ((* * * * * * *))  ")
+print("           ((* * * * * * * * *)) ")
+print("           *         :         * ")
+print("           *         :         * ")
+print("           *    +    :    +    * ")
+print("           *   + +   :   + +   * ")
+print("           *    +    :    +    * ")
+print("           *         :         * ")
+print("           *         :         * ")
+print("           * * * * * * * * * * *")
+print("           * * * * * * * * * * *")
 name = input("Please enter your name to play the game:\n")
 print("Hi", name)
 print("Are you ready to win your tons of treasures behind the magical door?\n ")  # noqa: E501
@@ -27,7 +53,6 @@ if answer in ('y', 'yes', 'Y', 'Yes'):
     print("You are on the dead end of the road")
     time.sleep(2)
     print("Now you have two options to choose your path right or left,")
-    time.sleep(2)
     answer = input("which path would you like to go? \n")
     time.sleep(2)
     if answer == "right":
@@ -50,7 +75,7 @@ if answer in ('y', 'yes', 'Y', 'Yes'):
                 print("The dragon will take you a ride to the final destination.")  # noqa: E501
                 time.sleep(2)
                 answer = input("Type 'Blue' or 'White': \n  ")
-                if answer == "white":
+                if answer in ('white', 'White'):
                     print("Dragon took you across the seven mountains and seven seas")  # noqa: E501
                     time.sleep(2)
                     print("In the seven seas there is a beautiful gigantic fish.")  # noqa: E501
@@ -79,8 +104,8 @@ if answer in ('y', 'yes', 'Y', 'Yes'):
                         time.sleep(2)
                         print("How do you get the fire to burn and charge?")
                         time.sleep(2)
-                        answer1 = input("Dragon fire or match box? \n")
-                        if answe in ('dragon fire', 'dragon'):
+                        answer = input("Dragon fire or match box? \n")
+                        if answer in ('dragon fire', 'dragon'):
                             print("Yes you used the dragon fire")
                             print("To burnt the fence and charged the key.")
                             time.sleep(2)
@@ -94,7 +119,7 @@ if answer in ('y', 'yes', 'Y', 'Yes'):
                             print("Which precious item would you like to choose?")  # noqa: E501
                             time.sleep(2)
                             answer1 = input("Gold, Diamond, Platinum : \n ")
-                            if answer1 in ('Gold', 'Diamond', 'Platinum', 'gold', 'diamond', 'platinum'):
+                            if answer1 in ('Gold', 'Diamond', 'Platinum', 'gold', 'diamond', 'platinum'):   # noqa: E501
                                 print("Well done", name + " You're the winner!")   # noqa: E501
                                 print("Take your treasure to your home and enjoy!!!")   # noqa: E501
                                 time.sleep(2)
@@ -121,7 +146,7 @@ if answer in ('y', 'yes', 'Y', 'Yes'):
                         print("Play again to find the treasure, good luck.")
                     else:
                         print("Not a valid option, you lose")
-                elif answer == "Blue":
+                elif answer in ('Blue', 'blue'):
                     print("Sorry your answer is wrong, try again")
                 else:
                     print("Not a valid option, you lose")
@@ -142,7 +167,7 @@ if answer in ('y', 'yes', 'Y', 'Yes'):
         time.sleep(2)
         answer = input("Type walk/swim: \n ")
         if answer == "walk":
-            print("you walked for my miles and ran out of water and food,")
+            print("you walked for miles and ran out of water and food,")
             time.sleep(2)
             print("you died out of starving.")
             time.sleep(2)
@@ -163,12 +188,9 @@ elif answer in ('n', 'no'):
     print("Sorry you missed the treasure to your family, see you next time")
 
 else:
-    print("Not a valid option, you lose")
-
+    print("Not a valid option, you lose") 
 user = [name, answer1]
 WINNERS.append_row(user)
 results = WINNERS.get_values()
-
-
 # # for result in results:
 # print(name,  " wins ",  results)
