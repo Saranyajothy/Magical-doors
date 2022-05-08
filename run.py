@@ -20,109 +20,84 @@ SHEET = GSPREAD_CLIENT.open('magical_doors')
 WINNERS = SHEET.worksheet('winners')
 
 
-def invalid():
-    print("Answer not valid")
-
-
 def get_name():
     name = input("Please enter your name to play the game:\n")
-    print("Hi", name)
     return name
-
-
-def player_lost():
-        print("You Lost...")
-        print("Good Bye!")
-        return Lose
-
-
-def player_won():
-    Treasure = input("Gold, Diamond, Platinum : \n ")
-    if Treasure in ('Gold', 'Diamond', 'Platinum', 'gold', 'diamond', 'platinum'): # noqa: E501
-        print(" Well done", name + " You're the winner!")   # noqa: E501
-        print(" Take your treasure to your home and enjoy!!!")   # noqa: E501
-        time.sleep(2)
-        print(" Hope you enjoyed the game")
-        time.sleep(2)
-        print(" If you like the game")
-        print(" Give thumbs up!!!")
-        return Treasure
 
 
 def game():
     print("Welcome to Magical Door Game")
     print("===========================================")
-    # name = input("Please enter your name to play the game:\n")
-    # print("Hi", name)
-    Answer = (input(" Are you ready to win your tons of treasures behind the magical door?\n Type YES or NO \n:")) 
-    if Answer in ('y','YES'): 
+    name = get_name()
+    option1 = (input(" Hi " + name + " Are you ready to win your tons of treasures behind the magical door?\n Type YES or NO \n:")) 
+    if option1 in ('y','YES'): 
         print(" Now you have two options to choose your path right or left,")
-        option1 = input(" which path would you like to go? \n Type Right or Left")
-        if option1 == "Right":
+        option2 = input(" which path would you like to go? \n Type Right or Left")
+        if option2 == "Right":
             print(" This path lead you to the door.")
             time.sleep(2)
             print(" Only way to reach the door and charge the key is to burn the fence")
             time.sleep(2)
             print(" How do you get the fire to burn and charge?")
             time.sleep(2)
-            option2 = input(" Dragon fire or match box? \n")
-            if option2 in ('dragon fire', 'dragon'):
+            option3 = input(" Dragon fire or match box? \n")
+            if option3 in ('dragon fire', 'dragon'):
                 print(" Yes you used the dragon fire to burnt the fence and charged the key")
                 print(" CONGRATULATIONS you opened the door")
-                return player_won
-            elif option2 in ('match box', 'match'):
+                Answer = player_won()
+            elif option3 in ('match box', 'match'):
                 print(" sorry you lost the game, play again")
-                return player_lost
-        elif option1 == "Left":
+                Answer = player_lost()
+            else:
+                print(" Not a valid option, you lose")
+                invalid()
+        elif option2 == "Left":
             print("This door leads to river, you swam across and were eaten by an alligators.")
-            print("You lost the game")
-            return player_lost
-    elif Answer in ('n', 'NO'):
+            Answer = player_lost()
+        else:
+            print(" Not a valid option, you lose")
+            invalid()
+    elif option1 in ('n', 'NO'):
         print(" Sorry you missed the treasure to your family, see you next time")
-        player_lost()
+        Answer = player_lost()
     else:
         print(" Not a valid option, you lose")
         invalid()
 
-# user = [name, Answer]
-# WINNERS.append_row(user)
-# results = WINNERS.get_values()
+    user = [name, Answer]
+    WINNERS.append_row(user)
+    results = WINNERS.get_values()
+
+
+def player_lost():
+    Answer = "Lose"
+    print("You Lost...")
+    print("Good Bye!")
+    return Answer
+
+
+def player_won():
+    Answer = input("Choose your treasure: Gold, Diamond, Platinum : \n ")
+    if Answer in ('Gold', 'Diamond', 'Platinum', 'gold', 'diamond', 'platinum'): # noqa: E501
+        print(" Well done, You're the winner!")   # noqa: E501
+        print(" Take your treasure to your home and enjoy!!!")   # noqa: E501
+        print(" Hope you enjoyed the game")
+        time.sleep(2)
+        print(" If you like the game")
+        print(" Give thumbs up!!!")
+        return Answer
+
+
+def invalid():
+    print("Answer not valid")
 
 
 def main():
-    # name = get_name()
-    result = game()
-    # user = [name, result]
-    # WINNERS.append_row(user)
-
+    game()
 
 
 if __name__ == "__main__":
     main()
-
-# def main():
-#     main()
-#     """
-#     Run all program functions
-#     """
-    # name = get_name()
-    # update_worksheet(name, "Name")
-    # result = game()
-    # update_worksheet(result, "Treasure")
-
-# main()
-    
-    # result = [name, Answer]
-
-    # user = [name, Answer]
-    # WINNERS.append_row(user)
-    # results = WINNERS.get_values()
-
-
-
-
-
-
 
 
 
