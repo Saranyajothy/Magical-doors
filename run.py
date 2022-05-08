@@ -28,11 +28,26 @@ def get_name():
 def game():
     print("Welcome to Magical Door Game")
     print("===========================================")
+    print("                   ((*)) ")
+    print("                 ((* * *))    ")
+    print("               ((* * * * *))    ")
+    print("             ((* * * * * * *))  ")
+    print("           ((* * * * * * * * *)) ")
+    print("           *         :         * ")
+    print("           *         :         * ")
+    print("           *    +    :    +    * ")
+    print("           *   + +   :   + +   * ")
+    print("           *    +    :    +    * ")
+    print("           *         :         * ")
+    print("           *         :         * ")
+    print("           * * * * * * * * * * * ")
+    print("           * * * * * * * * * * * ")
+    print("           * * * * * * * * * * * ")
     name = get_name()
     option1 = (input(" Hi " + name + " Are you ready to win your tons of treasures behind the magical door?\n Type YES or NO \n:")) 
-    if option1 in ('y','YES'): 
+    if option1 in ('y', 'YES'): 
         print(" Now you have two options to choose your path right or left,")
-        option2 = input(" which path would you like to go? \n Type Right or Left")
+        option2 = input(" which path would you like to go? \n Type Right or Left \n")
         if option2 == "Right":
             print(" This path lead you to the door.")
             time.sleep(2)
