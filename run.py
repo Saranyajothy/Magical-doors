@@ -51,24 +51,55 @@ def game():
         if option2 in ('right', 'Right', 'RIGHT'):
             print("This path lead you to the door.")
             time.sleep(2)
-            print("Only way to reach the door and charge the key is to burn the fence")
-            time.sleep(2)
-            print("How do you get the fire to burn and charge?")
-            time.sleep(2)
-            option3 = input("Dragon fire or match box? \n")
-            if option3 in ('dragon fire', 'dragon'):
-                print("Yes you used the dragon fire to burnt the fence and charged the key")
-                print("CONGRATULATIONS you opened the door")
-                Answer = player_won()
-            elif option3 in ('match box', 'match'):
+            print("This path lead you to the enchanted forest.")
+            print("The trees are chanting the mantra,")
+            option4 = input("Is that 1. Divine power or 2. Magical power? Type 1 or 2:  ")
+            if option4 == "1":
+                print("The portal is opening for you,")
+                print("you entered the new world full of magical creatures")
+                print("Choose one dragon from two that will take you to a ride,")
+                option5 = input("Type 'Blue' or 'White'")
+                if option5 in ('white', 'WHITE'):
+                    print("white dragon took you across the seven mountains and seven seas and dropped you at the desination")
+                    print("The magical door is surrounded by sharp wooden fence")
+                    print("Only way to reach the door and charge the key is to burn the fence")
+                    time.sleep(2)
+                    print("How do you get the fire to burn and charge?")
+                    time.sleep(2)
+                    option6 = input("Dragon fire or match box? \n")
+                    if option6 in ('dragon fire', 'dragon'):
+                        print("Yes you used the dragon fire to burnt the fence and charged the key")
+                        print("CONGRATULATIONS you opened the door")
+                        Answer = player_won()
+                    elif option6 in ('match box', 'match'):
+                        print("sorry you lost the game, play again")
+                        Answer = player_lost()
+                    else:
+                        print("Not a valid option, you lose")
+                        invalid()
+                elif option5 in ('blue', 'BLUE'):
+                    print("sorry you lost the game, play again")
+                    Answer = player_lost()
+                else:
+                    print("Not a valid option, you lose")
+                    invalid() 
+            elif option4 == "2":
                 print("sorry you lost the game, play again")
                 Answer = player_lost()
             else:
                 print("Not a valid option, you lose")
-                invalid()
+                invalid()                   
         elif option2 in ('Left', 'left'):
-            print("This door leads to river, you swam across and were eaten by an alligators.")
-            Answer = player_lost()
+            option7 = input("you come to the river, you can walk around or you can swim across the river? walk/swim:")
+            if option7 == "walk":
+                print("you walked for my miles and ran out of water and food, you died out of starving")
+                Answer = player_lost()
+            elif option7 == "swim" :
+                print("you swam across and were eaten by an alligators")
+                Answer = player_lost()
+            else:
+                print("Not a valid option, you lose")
+                invalid() 
         else:
             print("Not a valid option, you lose")
             invalid()
