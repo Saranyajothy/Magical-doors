@@ -7,6 +7,7 @@ from colorama import Fore, Back
 import gspread
 from google.oauth2.service_account import Credentials
 
+
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
     "https://www.googleapis.com/auth/drive.file",
@@ -19,7 +20,7 @@ GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('magical-doors')
 
 WINNERS = SHEET.worksheet('winners')
-
+colorama.init(autoreset=True)
 
 def get_name():
     """
@@ -207,4 +208,4 @@ def main():
 if __name__ == "__main__":
     main()
 
-colorama.init()
+colorama.init(autoreset=True)
