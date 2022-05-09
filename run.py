@@ -3,7 +3,7 @@ Magical door game
 """
 import time
 import colorama
-from colorama import Fore, Back
+# from colorama import Fore, Back
 import gspread
 from google.oauth2.service_account import Credentials
 
@@ -20,7 +20,8 @@ GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('magical-doors')
 
 WINNERS = SHEET.worksheet('winners')
-colorama.init(autoreset=True)
+# colorama.init(autoreset=True)
+
 
 def get_name():
     """
@@ -33,19 +34,19 @@ def get_name():
 def game():
     """
     Question and select the options to open the magical door
-    """
-    print(f"{Fore.YELLOW}$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")  # noqa: E501
-    print(f"{Fore.RED} _  _   __    ___  __  ___   __   __      ____   __    __  ____   ")  # noqa: E501
-    print(f"{Fore.MAGENTA}( \/ ) / _\  / __)(  )/ __) / _\ (  )    (    \ /  \  /  \(  _ \  ")  # noqa: E501
-    print(f"{Fore.BLUE}/ \/ \/    \( (_ \ )(( (__ /    \/ (_/\   ) D ((  O )(  O ))   /  ")  # noqa: E501
-    print(f"{Fore.MAGENTA}\_)(_/\_/\_/ \___/(__)\___)\_/\_/\____/  (____/ \__/  \__/(__\_)  ")  # noqa: E501
+    # """
+    # print(f"{Fore.YELLOW}$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")  # noqa: E501
+    # print(f"{Fore.RED} _  _   __    ___  __  ___   __   __      ____   __    __  ____   ")  # noqa: E501
+    # print(f"{Fore.MAGENTA}( \/ ) / _\  / __)(  )/ __) / _\ (  )    (    \ /  \  /  \(  _ \  ")  # noqa: E501
+    # print(f"{Fore.BLUE}/ \/ \/    \( (_ \ )(( (__ /    \/ (_/\   ) D ((  O )(  O ))   /  ")  # noqa: E501
+    # print(f"{Fore.MAGENTA}\_)(_/\_/\_/ \___/(__)\___)\_/\_/\____/  (____/ \__/  \__/(__\_)  ")  # noqa: E501
 
-    print(f"{Fore.YELLOW}$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")  # noqa: E501
+    # print(f"{Fore.YELLOW}$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")  # noqa: E501
 
-    print(f"{Fore.CYAN}         Welcome to Magical Door Game")
-    print(f"{Fore.GREEN}       ==============================")
+    print("         Welcome to Magical Door Game")
+    print("       ==============================")
 
-    print(f"{Fore.YELLOW}                    ((*)) ")
+    print("                    ((*)) ")
     print("                  ((* * *))")
     print("                ((* * * * *))") 
     print("              ((* * * * * * *))") 
@@ -107,21 +108,21 @@ def game():
                             print("sorry you lost the game, play again")
                             answer = player_lost()
                         else:
-                            print(f"{Fore.RED}Not a valid option, you lose")
+                            print("Not a valid option, you lose")
                             print("Play again")
                             answer = invalid()
                     elif option5 in ('2', '4', '7'): 
                         print("sorry you lost the game, play again")
                         answer = player_lost() 
                     else:
-                        print(f"{Fore.RED}Not a valid option, you lose")
+                        print("Not a valid option, you lose")
                         print("Play again")
                         answer = invalid()        
                 elif option4 in ('blue', 'BLUE'):
                     print("sorry you lost the game, play again")
                     answer = player_lost()
                 else:
-                    print(f"{Fore.RED}Not a valid option, you lose")
+                    print("Not a valid option, you lose")
                     print("Play again")
                     answer = invalid()
             elif option3 == "2":
@@ -130,7 +131,7 @@ def game():
                 print("You lost the game, play again")
                 answer = player_lost()
             else:
-                print(f"{Fore.RED}Not a valid option, you lose")
+                print("Not a valid option, you lose")
                 print("Play again")
                 answer = invalid()
         elif option2 in ('Left', 'left'):
@@ -142,7 +143,7 @@ def game():
                 print("you swam across and were eaten by an alligators")
                 answer = player_lost()
             else:
-                print(f"{Fore.RED}Not a valid option, you lose")
+                print("Not a valid option, you lose")
                 print("Play again")
                 answer = invalid()
         else:
@@ -154,7 +155,7 @@ def game():
         print("see you next time")
         answer = player_lost()
     else:
-        print(f"{Fore.RED}Not a valid option, you lose")
+        print("Not a valid option, you lose")
         print("Play again")
         answer = invalid()
 
@@ -168,7 +169,7 @@ def player_lost():
     Assigned the result of the loser
     """
     answer = "Lose"
-    print(f"{Back.RED}You Lost...")
+    print("You Lost...")
     print("Good Bye!")
     return answer
 
@@ -181,9 +182,9 @@ def player_won():
     answer = input("Choose your treasure: Gold, Diamond, Platinum : \n ")
     if answer in ('Gold', 'Diamond', 'Platinum', 'gold', 'diamond', 'platinum'):  # noqa: E501
         print()
-        print(f"{Back.GREEN} WELL DONE, You're the WINNER!")
+        print("WELL DONE, You're the WINNER!")
         time.sleep(2)
-        print(f"{Fore.WHITE}Take your treasure to your home and enjoy!!!")
+        print("Take your treasure to your home and enjoy!!!")
         time.sleep(2)
         print("Hope you enjoyed the game")
         time.sleep(2)
@@ -208,4 +209,4 @@ def main():
 if __name__ == "__main__":
     main()
 
-colorama.init(autoreset=True)
+# colorama.init(autoreset=True)
