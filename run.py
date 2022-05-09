@@ -33,13 +33,13 @@ def game():
     """
     Question and select the options to open the magical door
     """
-    print(f"{Fore.YELLOW}$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
-    print(f"{Fore.RED} _  _   __    ___  __  ___   __   __      ____   __    __  ____   ")
-    print(f"{Fore.MAGENTA}( \/ ) / _\  / __)(  )/ __) / _\ (  )    (    \ /  \  /  \(  _ \  ")
-    print(f"{Fore.BLUE}/ \/ \/    \( (_ \ )(( (__ /    \/ (_/\   ) D ((  O )(  O ))   /  ")
-    print(f"{Fore.MAGENTA}\_)(_/\_/\_/ \___/(__)\___)\_/\_/\____/  (____/ \__/  \__/(__\_)  ")
-    
-    print(f"{Fore.YELLOW}$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
+    print(f"{Fore.YELLOW}$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")  # noqa: E501
+    print(f"{Fore.RED} _  _   __    ___  __  ___   __   __      ____   __    __  ____   ")  # noqa: E501
+    print(f"{Fore.MAGENTA}( \/ ) / _\  / __)(  )/ __) / _\ (  )    (    \ /  \  /  \(  _ \  ")  # noqa: E501
+    print(f"{Fore.BLUE}/ \/ \/    \( (_ \ )(( (__ /    \/ (_/\   ) D ((  O )(  O ))   /  ")  # noqa: E501
+    print(f"{Fore.MAGENTA}\_)(_/\_/\_/ \___/(__)\___)\_/\_/\____/  (____/ \__/  \__/(__\_)  ")  # noqa: E501
+
+    print(f"{Fore.YELLOW}$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")  # noqa: E501
 
     print(f"{Fore.CYAN}         Welcome to Magical Door Game")
     print(f"{Fore.GREEN}       ==============================")
@@ -75,13 +75,13 @@ def game():
                 time.sleep(2)
                 print("you entered the new world full of magical creatures")
                 time.sleep(2)
-                print("Choose one dragon from two that will take you to a ride")
+                print("Choose one dragon from two that will take you to a ride")  # noqa: E501
                 time.sleep(2)
                 option4 = input("Type 'Blue' or 'White'\n")
                 if option4 in ('white', 'WHITE'):
                     print("white dragon took you across the seven mountains and seven seas ")  # noqa: E501
                     time.sleep(2)
-                    print("In the seven seas there is a beautiful gigantic fish with glittering gold scales")
+                    print("In the seven seas there is a beautiful gigantic fish with glittering gold scales")  # noqa: E501
                     time.sleep(2)
                     print("That fish holds the key for the magic door.")
                     time.sleep(2)
