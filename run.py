@@ -2,7 +2,7 @@
 Magical door game
 """
 import time
-import colorama
+# import colorama
 # from colorama import Fore, Back
 import gspread
 from google.oauth2.service_account import Credentials
