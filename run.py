@@ -27,7 +27,7 @@ def get_name():
     """
     Enter the name to start the game
     """
-    name = input(f"{Fore.WHITE}Please enter your name to play the game:\n")
+    name = input("Please enter your name to play the game:\n")
     return name
 
 
