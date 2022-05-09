@@ -63,7 +63,7 @@ def game():
     print("            * * * * * * * * * * * ")
     name = get_name()
     option1 = input("Hi " + name + "  Are you ready to win your tons of treasures behind the magical door?\nType YES or NO: \n")  # noqa: E501
-    if option1 in ('y', 'YES', 'yes'):
+    if option1 in ('y', 'YES', 'yes', 'Y'):
         print("Now you have two options to choose your path right or left,")
         option2 = input("which path would you like to go?\nType Right or Left \n")  # noqa: E501
         if option2 in ('right', 'Right', 'RIGHT'):
@@ -80,7 +80,7 @@ def game():
                 print("Choose one dragon from two that will take you to a ride")  # noqa: E501
                 time.sleep(2)
                 option4 = input("Type 'Blue' or 'White'\n")
-                if option4 in ('white', 'WHITE'):
+                if option4 in ('white', 'WHITE', 'White'):
                     print("white dragon took you across the seven mountains and seven seas ")  # noqa: E501
                     time.sleep(2)
                     print("In the seven seas there is a beautiful gigantic fish with glittering gold scales")  # noqa: E501
@@ -99,12 +99,12 @@ def game():
                         print("How do you get the fire to burn and charge?")
                         time.sleep(2)
                         option6 = input("Dragon fire or match box? \n")
-                        if option6 in ('dragon fire', 'dragon'):
+                        if option6 in ('dragon fire', 'dragon', 'DRAGON FIRE' 'DRAGON', 'Dragon'):
                             print("Yes you used the dragon fire to burnt the fence and charged the key")  # noqa: E501
                             time.sleep(2)
                             print("CONGRATULATIONS you opened the door")
                             answer = player_won()
-                        elif option6 in ('match box', 'match'):
+                        elif option6 in ('match box', 'match', 'Match', 'MATCH', 'MATCH BOX'):
                             print("sorry you lost the game, play again")
                             answer = player_lost()
                         else:
@@ -134,12 +134,12 @@ def game():
                 print("Not a valid option, you lose")
                 print("Play again")
                 answer = invalid()
-        elif option2 in ('Left', 'left'):
+        elif option2 in ('Left', 'left', 'LEFT'):
             option7 = input("you come to the river, you can walk around or you can swim across the river? walk/swim: \n")  # noqa: E501
-            if option7 == "walk":
+            if option7 in ('walk', 'Walk', 'WALK'):
                 print("you walked for my miles and ran out of water and food, you died out of starving")  # noqa: E501
                 answer = player_lost()
-            elif option7 == "swim":
+            elif option7 in ('swim', 'Swim', 'SWIM'):
                 print("you swam across and were eaten by an alligators")
                 answer = player_lost()
             else:
@@ -150,7 +150,7 @@ def game():
             print("Not a valid option, you lose")
             print("Play again")
             answer = invalid()
-    elif option1 in ('n', 'NO', 'no'):
+    elif option1 in ('n', 'NO', 'no', 'No'):
         print("Sorry you missed the treasure to your family,")
         print("see you next time")
         answer = player_lost()
