@@ -83,22 +83,22 @@ def game():
                         print("Yes you used the dragon fire to burnt the fence and charged the key")
                         time.sleep(2)
                         print("CONGRATULATIONS you opened the door")
-                        Answer = player_won()
+                        answer = player_won()
                     elif option6 in ('match box', 'match'):
                         print("sorry you lost the game, play again")
-                        Answer = player_lost()
+                        answer = player_lost()
                     else:
                         print("Not a valid option, you lose")
                         invalid()
                 elif option5 in ('blue', 'BLUE'):
                     print("sorry you lost the game, play again")
-                    Answer = player_lost()
+                    answer = player_lost()
                 else:
                     print("Not a valid option, you lose")
                     invalid() 
             elif option4 == "2":
                 print("sorry you lost the game, play again")
-                Answer = player_lost()
+                answer = player_lost()
             else:
                 print("Not a valid option, you lose")
                 invalid()                   
@@ -106,10 +106,10 @@ def game():
             option7 = input("you come to the river, you can walk around or you can swim across the river? walk/swim: \n")
             if option7 == "walk":
                 print("you walked for my miles and ran out of water and food, you died out of starving")
-                Answer = player_lost()
+                answer = player_lost()
             elif option7 == "swim":
                 print("you swam across and were eaten by an alligators")
-                Answer = player_lost()
+                answer = player_lost()
             else:
                 print("Not a valid option, you lose")
                 invalid() 
@@ -118,12 +118,12 @@ def game():
             invalid()
     elif option1 in ('n', 'NO'):
         print("Sorry you missed the treasure to your family, see you next time")
-        Answer = player_lost()
+        answer = player_lost()
     else:
         print("Not a valid option, you lose")
         invalid()
 
-    user = [name, Answer]
+    user = [name, answer]
     WINNERS.append_row(user)
     results = WINNERS.get_values()
 
@@ -132,25 +132,25 @@ def player_lost():
     """
     The result of the loser
     """
-    Answer = "Lose"
+    answer = "Lose"
     print("You Lost...")
     print("Good Bye!")
-    return Answer
+    return answer
 
 
 def player_won():
     """
     once the player opened the door they have the option to choose their treasures
     """
-    Answer = input("Choose your treasure: Gold, Diamond, Platinum : \n ")
-    if Answer in ('Gold', 'Diamond', 'Platinum', 'gold', 'diamond', 'platinum'): # noqa: E501
+    answer = input("Choose your treasure: Gold, Diamond, Platinum : \n ")
+    if answer in ('Gold', 'Diamond', 'Platinum', 'gold', 'diamond', 'platinum'): # noqa: E501
         print("Well done, You're the winner!") 
         time.sleep(2)  # noqa: E501
         print("Take your treasure to your home and enjoy!!!")   # noqa: E501
         time.sleep(2)
         print("Hope you enjoyed the game")
         time.sleep(2)
-        return Answer
+        return answer
 
 
 def invalid():
