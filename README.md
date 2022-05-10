@@ -3,7 +3,7 @@ Magical door is a Python terminal game. Magical door is an interactive game with
 
 The player gets through a magical door by entering their name and the game greets the player with interactive questions and options. The options selected by the player determine the players’ luck to stay in the game and to navigate through the path to either become a winner or to loose. For every option chosen, the player will be informed about what to expect in their route.
 
-[click here to view the site](https://git.heroku.com/magical-doors.git)
+[click here to view the site](https://magical-doors.herokuapp.com/)
 # Table of contents
 - [User Experience](#user-experience)
 - [How to play](#how-to-play)

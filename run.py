@@ -2,7 +2,6 @@
 Magical door game
 """
 import time
-# from termcolor import colored
 import gspread
 from google.oauth2.service_account import Credentials
 
@@ -21,25 +20,18 @@ SHEET = GSPREAD_CLIENT.open('magical-doors')
 WINNERS = SHEET.worksheet('winners')
 
 
-def get_name():
-    """
-    Enter the name to start the game
-    """
-    name = input("> Please enter your name to play the game:\n")
-    return name
+# def get_name():
+#     """
+#     Enter the name to start the game
+#     """
+#     name = input("> Please enter your name to play the game:\n")
+#     return name
 
 
 def game():
     """
     Question and select the options to open the magical door
-    # """
-    # print(f"{Fore.YELLOW}$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")  # noqa: E501
-    # print(f"{Fore.RED} _  _   __    ___  __  ___   __   __      ____   __    __  ____   ")  # noqa: E501
-    # print(f"{Fore.MAGENTA}( \/ ) / _\  / __)(  )/ __) / _\ (  )    (    \ /  \  /  \(  _ \  ")  # noqa: E501
-    # print(f"{Fore.BLUE}/ \/ \/    \( (_ \ )(( (__ /    \/ (_/\   ) D ((  O )(  O ))   /  ")  # noqa: E501
-    # print(f"{Fore.MAGENTA}\_)(_/\_/\_/ \___/(__)\___)\_/\_/\____/  (____/ \__/  \__/(__\_)  ")  # noqa: E501
-
-    # print(f"{Fore.YELLOW}$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")  # noqa: E501
+    """
 
     print("        Welcome to Magical Door Game")
     print("       ==============================")
@@ -59,29 +51,53 @@ def game():
     print("            * * * * * * * * * * * ")
     print("            * * * * * * * * * * * ")
     print("            * * * * * * * * * * * ")
-    name = get_name()
-    option1 = input("> Hi " + name + "  Are you ready to win your tons of treasures behind the magical door?\nType YES or NO: \n")  # noqa: E501
+    # name = get_name()
+    while True:
+        name = input('Please enter your name to start the game: \n')
+        if name.isalpha() and (len(name) > 2 and len(name) <= 10):
+            print(
+                "Hi", name,
+                "Are you ready to win your tons of treasures "
+                "behind the magical door?"
+                )
+            break
+    option1 = input("> Type YES or NO: \n")
     if option1 in ('y', 'YES', 'yes', 'Y'):
         print("> Now you have two options to choose your path right or left,")
-        option2 = input("> which path would you like to go?\nType Right or Left \n")  # noqa: E501
+        option2 = input(
+                    ("> which path would you like to go? \n"
+                     "> Type Right or Left \n")
+                    )
         if option2 in ('right', 'Right', 'RIGHT'):
             print("> This path lead you to the enchanted forest.")
             time.sleep(2)
             print("> The trees are chanting the mantra,")
             time.sleep(2)
-            option3 = input("> Is that 1. Divine or 2. mundane? Type 1 or 2 : \n")  # noqa: E501
+            option3 = input(
+                ("> Is that 1. Divine or 2. mundane? \n"
+                 "> Type 1 or 2 : ")
+                )
             if option3 == "1":
                 print("> The portal is opening for you,")
                 time.sleep(2)
                 print("> you entered the new world full of magical creatures")
                 time.sleep(2)
-                print("> Choose one dragon from two that will take you to a ride")  # noqa: E501
+                print(
+                    ("> Choose one dragon from two"
+                     "that will take you to a ride")
+                    )
                 time.sleep(2)
                 option4 = input("> Type 'Red' or 'Blue'\n")
                 if option4 in ('red', 'Red', 'RED'):
-                    print("> Red dragon took you across the seven mountains and seven seas ")  # noqa: E501
+                    print(
+                        ("> Red dragon took you across"
+                         "the seven mountains and seven seas")
+                        )
                     time.sleep(2)
-                    print("> One of the seven seas there is a beautiful gigantic fish with glittering gold scales")  # noqa: E501
+                    print(
+                        ("> One of the seven seas there is a beautiful"
+                         "gigantic fish with glittering gold scales")
+                        )
                     time.sleep(2)
                     print("> That fish holds the key for the magical door.")
                     time.sleep(2)
@@ -90,23 +106,38 @@ def game():
                     if option5 in ('1', '3', '5', '7'):
                         print("> Hurrah you got the key")
                         time.sleep(2)
-                        print("> The magical door is surrounded by sharp wooden fence")  # noqa: E501
+                        print(
+                            ("> The magical door is surrounded by"
+                             "sharp wooden fence")
+                            )
                         time.sleep(2)
-                        print("> Only way to reach the door and charge the key is to burn the fence")  # noqa: E501
+                        print(
+                            ("> Only way to reach the door and"
+                             "charge the key is to burn the fence")
+                            )
                         time.sleep(2)
                         print("> How do you get the fire to burn and charge?")
                         time.sleep(2)
                         option6 = input("> Dragon fire or match box? \n")
-                        if option6 in ('dragon fire', 'dragon', 'DRAGON FIRE' 'DRAGON', 'Dragon'):  # noqa: E501
-                            print("> Yes you used the dragon fire to burnt the fence and charged the key")  # noqa: E501
+                        if option6 in (
+                                    ('dragon fire', 'dragon', 'DRAGON FIRE',
+                                     'DRAGON', 'Dragon')
+                                    ):
+                            print(
+                                ("> Yes you used the dragon fire to burnt"
+                                 "the fence and charged the key")
+                                )
                             time.sleep(2)
                             print("> CONGRATULATIONS you opened the door")
                             answer = player_won()
-                        elif option6 in ('match box', 'match', 'Match', 'MATCH', 'MATCH BOX'):  # noqa: E501
+                        elif option6 in (
+                                        ('match box', 'match', 'Match',
+                                         'MATCH', 'MATCH BOX')
+                                        ):
                             print("> sorry you lost the game, play again")
                             answer = player_lost()
                         else:
-                            print("> Not a valid option, you lose")
+                            print("> Not a valid option")
                             print("> Play again")
                             answer = invalid()
                     elif option5 in ('2', '4', '6'):
@@ -114,7 +145,7 @@ def game():
                         print("> sorry you lost the game, play again")
                         answer = player_lost()
                     else:
-                        print("> Not a valid option, you lose")
+                        print("> Not a valid option")
                         print("> Play again")
                         answer = invalid()
                 elif option4 in ('blue', 'Blue', 'BLUE'):
@@ -122,7 +153,7 @@ def game():
                     print("> sorry you lost the game, play again")
                     answer = player_lost()
                 else:
-                    print("> Not a valid option, you lose")
+                    print("> Not a valid option")
                     print("> Play again")
                     answer = invalid()
             elif option3 == "2":
@@ -130,24 +161,31 @@ def game():
                 print("> sorry you lost the game, play again")
                 answer = player_lost()
             else:
-                print("> Not a valid option, you lose")
+                print("> Not a valid option")
                 print("> Play again")
                 answer = invalid()
         elif option2 in ('Left', 'left', 'LEFT'):
-            option7 = input("> You come to the river, you can walk around or you can swim across the river? walk/swim: \n")  # noqa: E501
+            option7 = input(
+                           ("> You come to the river,"
+                            "you can walk around or you can swim"
+                            "across the river? walk/swim: \n")
+                            )
             if option7 in ('walk', 'Walk', 'WALK'):
-                print("> You walked for my miles and ran out of water and food, you died out of starving")  # noqa: E501
+                print(
+                    ("> You walked for my miles and ran out of"
+                     "water and food, you died out of starving")
+                    )
                 answer = player_lost()
             elif option7 in ('swim', 'Swim', 'SWIM'):
                 print("> You swam across and were eaten by an alligators")
                 print("> Sorry you lost the game, play again")
                 answer = player_lost()
             else:
-                print("> Not a valid option, you lose")
+                print("> Not a valid option")
                 print("> Play again to win the treasure")
                 answer = invalid()
         else:
-            print("> Not a valid option, you lose")
+            print("> Not a valid option")
             print("> Play again")
             answer = invalid()
     elif option1 in ('n', 'NO', 'no', 'No'):
@@ -155,7 +193,7 @@ def game():
         print("> see you next time")
         answer = player_quit()
     else:
-        print("> Not a valid option, you lose")
+        print("> Not a valid option")
         print("> Play again")
         answer = invalid()
 
@@ -178,7 +216,10 @@ def player_won():
     treasures
     """
     answer = input("> Choose your treasure: Gold, Diamond, Platinum : \n ")
-    if answer in ('Gold', 'Diamond', 'Platinum', 'gold', 'diamond', 'platinum'):  # noqa: E501
+    if answer in (
+                  ('Gold', 'Diamond', 'Platinum', 'gold',
+                   'diamond', 'platinum')
+                ):
         print()
         print("> WELL DONE, You're the WINNER!")
         time.sleep(2)
