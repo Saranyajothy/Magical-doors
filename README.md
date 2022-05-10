@@ -41,7 +41,8 @@ As a First Time User, I want to be communicated with the progress I made at ever
 As a Returning / Frequent Visitor, I want to be able to play the game again and to learn the best options to stay in the game and to learn how to win.
 
 # How to play
-The player will be greeted with a message “welcome to Magical Door Game”. The game prompts the player to enter his/her name.  A player starts to play Magical door by typing their name and they will be greeted and given two options to proceed with the game, Yes or No.
+The player will be greeted with a message “welcome to Magical Door Game”. The game prompts the player to enter his/her name.  
+- A player starts to play Magical door by typing their name and they will be greeted and given two options to proceed with the game, Yes or No.
 
 - The game won’t proceed if the player chooses the option “No”.
 
@@ -64,6 +65,7 @@ The player will be greeted with a message “welcome to Magical Door Game”. Th
 - As the key is charged, they player can open the door and will get the options to choose from Gold, Diamond and Platinum as a treasure.
 
 - The player can choose their desired treasure as their prize.
+[!winner](/readme-images/winner.png) 
 
 - If the player chooses, “Left”,
 
@@ -80,65 +82,90 @@ The player will be greeted with a message “welcome to Magical Door Game”. Th
 ## Existing Features
 
 The game is designed to enter a magical door and to navigate through some options to get the treasure. During this navigation, they might lose or win.  
-Screenshot of Game introduction
-Screenshot of player choosing path to the “Right”.
-
+- Screenshot of Game introduction
+[!start](/readme-images/start.png)
+- Screenshot of player choosing path to the “Right” and choose the right option and win.
+[!winner](/readme-images/winner.png) 
+- screensjot of the player the lose the game.
+[!loser](/readme-images/loser.png)
+- enter invalid option
+[!validate](/readme-images/validate.png) 
+- Screenshot of the google sheet with player's details update.
+[!sheet](/readme-images/sheet.png)
 ## Future Features
 
-To add interactive voice.
-To make the game more adventurous and interesting options to explore.
+- To add interactive voice.
+- To make the game more adventurous and interesting options to explore.
 
 
 # Code validation
+## Validator Testing
 
+### PEP8
+[!pep8](/readme-images/pep8.png)
+- Errors were detected and resolved
+- Line length errors detected and resolved
+- Line breaks after operators/operands detected and resolved
+### python syntac checker
+[!python-syntax](/readme-images/python-syntax.png)
+- No Errors or warnings detected
 
 ## Manual testing
 Manual testing was carried out in addition to automated process.
-
-I did a manual test to verify that the website functions well in various browsers like Safari, Google Chrome and Firefox.
-
-I manually tested the functions of main page, five  categoty pages and end game page. I checked with few mobile devices for the correct alignment.
-
-
 ## Bug fixing
 #### Issues
-- The final score area is not displaying on the end game page and fixed it by changing the code mistakes.
-- Shows few errors in js file anfd fixed the issues.
-![bug1](/readme-images/bug1.png)
 
-![bug-js](/readme-images/bug-js.png)
+![bug1](/readme-images/bug1.png)
+  fixed the problem in the google sheet update.
 
 # Technology Used
-- HTML5 - designs the structure and content for the website.
-- CSS3 - presents the style for the website.
-- [canva](https://www.canva.com/) - a graphic design App was used to design the art border on the home page and to edit the pictures used in the website.
+- Python- To create Multiple choice question.
+- GitPod- is an open source platform for ready-to-code and automated.
+- GitHub- to save and host the project to run.
+- Heroku- used for deployment the app.
+- Python Tutor - to check how the Python code behaves in each line.
+- Google Sheet- To store name and winner details of the player.
+- Google Cloud Platform- for activating API Credentials.
 
-- [PicResize](https://picresize.com/) tool was used to resize and crop the pictures used in this website.
-
-- [Balsamiq](https://balsamiq.com/) was used to create wireframes.
-
-- [Google-fonts](https://fonts.google.com/) were used to select the fonts for the site.
-
-- [FontAwesome](https://fontawesome.com/kits/deb0a1425e/use?welcome=yes) was used for the icons in the end game page.
-Bootstrap was used to style and design the contact page.
 # Deployment
-Deployment of this website was done through GitHub pages using the following methods:
+- Deploying the app to heroku
+ Type the below details in gitpod terminal.
+1. Login to heroku and enter your details.
+ command: heroku login -i
 
-- Click on the Settings tab in the GitHub repository.
-- Scroll down to the pages tab.
-- Check for the Source tab and click the Main branch.
-- Click Save.
-- After clicking Save, it can take some time to get a deployed link.
+2. Get your app name from heroku.
+command: heroku apps
+
+3. Set the heroku remote. (Replace app_name with your actual app name)
+command: ﻿heroku git:remote -a app_name
+
+4. Add, commit and push to githubcommand: git add . && git commit -m "Deploy to Heroku via CLI"
+
+5. Push to both github and heroku
+command: git push origin main
+command: git push heroku main
+
+MFA/2FA enabled?
+1. Click on Account Settings (under the avatar menu)
+2. Scroll down to the API Key section and click Reveal. Copy the key.
+3. Enter the command: heroku_config , and enter your api key you copied when prompted
+4. Complete the steps above, if you see an input box at the top middle of the editor...
+ a. enter your heroku username
+ b. enter the api key you just copied
+
+### Need to deploy again?
+You should just be able to add, commit and push, and if prompted enter your username and api key again.
 
 # Credits
-- All background images of the website were from our canvas.
 
-- I learned a lot online via a few YouTube channels and code institue course materials. I got code references from the youtube channel 'Brian Design' just for javascript and code space.
+- I got alot of information from Google, W3 School and Youtube for this project.
 
-- I like to give credits to the Love math project by Code Institute and it is a wonderful resource for budding developers.
+- I like to give credits to the Love sanwinch project by Code Institute and it is a wonderful resource for budding developers.
 
 - My sincere thanks to my classmate 'Rhiannon' and special thanks to 'kavitha' for helping me in critical situation1.
  
 # Acknowledgement
 
-I would like to extend my sincere thanks to my mentor, my tutor, cohort facilitator, our cohort members, the slack community and The Code Institute for all the support I received to design and develop the website in conjunction with Full Stack Software Developer Diploma course (e-commerce) at the Code Institute.
+I would like to thank my mentor Brian and my tutors Kasia for their support feedback and guidance when needed.
+I would like to thank the students of Code Institute and Slack Community for sharing the open discussion from various students.
+I got alot of information from Google, W3 School and Youtube for this project.
