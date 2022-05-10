@@ -64,7 +64,7 @@ def game():
     if option1 in ('y', 'YES', 'yes', 'Y'):
         print("> Now you have two options to choose your path right or left,")
         option2 = input("> which path would you like to go?\nType Right or Left \n")  # noqa: E501
-        if option2 in ('  right', 'Right', 'RIGHT'):
+        if option2 in ('right', 'Right', 'RIGHT'):
             print("This path lead you to the enchanted forest.")
             time.sleep(2)
             print("The trees are chanting the mantra,")
