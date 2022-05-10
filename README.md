@@ -146,6 +146,8 @@ MFA/2FA enabled?
 ### Need to deploy again?
 You should just be able to add, commit and push, and if prompted enter your username and api key again.
 
+### googlesheet 
+[click here to view the site](https://docs.google.com/spreadsheets/d/1gkOQIij1pRAp6n9JpW35zuqsqG_rmzRRi-aeDNly-iw/edit?usp=sharing)
 # Credits
 
 - I got alot of information from Google, W3 School and Youtube for this project.
