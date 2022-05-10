@@ -78,14 +78,14 @@ def game():
                 print("Choose one dragon from two that will take you to a ride")  # noqa: E501
                 time.sleep(2)
                 option4 = input("Type 'Red' or 'White'\n")
-                if option4 in ('white', 'WHITE', 'White'):
-                    print("white dragon took you across the seven mountains and seven seas ")  # noqa: E501
+                if option4 in ('red', 'Red', 'RED'):
+                    print("Red dragon took you across the seven mountains and seven seas ")  # noqa: E501
                     time.sleep(2)
-                    print("In the seven seas there is a beautiful gigantic fish with glittering gold scales")  # noqa: E501
+                    print("One of the seven seas there is a beautiful gigantic fish with glittering gold scales")  # noqa: E501
                     time.sleep(2)
                     print("That fish holds the key for the magic door.")
                     time.sleep(2)
-                    print("Find the key?")
+                    print("Find the fish?")
                     option5 = input("select the option - 1,2,3,4,5,6,7:   \n")
                     if option5 in ('1', '3', '5', '6'):
                         print("Hurrah you got the key")
