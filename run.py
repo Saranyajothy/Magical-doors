@@ -2,8 +2,7 @@
 Magical door game
 """
 import time
-# import colorama
-# from colorama import Fore, Back
+from termcolor import colored
 import gspread
 from google.oauth2.service_account import Credentials
 
@@ -20,14 +19,13 @@ GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('magical-doors')
 
 WINNERS = SHEET.worksheet('winners')
-# colorama.init(autoreset=True)
 
 
 def get_name():
     """
     Enter the name to start the game
     """
-    name = input("Please enter your name to play the game:\n")
+    name = input("> Please enter your name to play the game:\n")
     return name
 
 
@@ -43,7 +41,7 @@ def game():
 
     # print(f"{Fore.YELLOW}$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")  # noqa: E501
 
-    print("         Welcome to Magical Door Game")
+    print(colored("        Welcome to Magical Door Game" 'cyan', attrs=['bold']))
     print("       ==============================")
 
     print("                    ((*)) ")
@@ -62,24 +60,24 @@ def game():
     print("            * * * * * * * * * * * ")
     print("            * * * * * * * * * * * ")
     name = get_name()
-    option1 = input("Hi " + name + "  Are you ready to win your tons of treasures behind the magical door?\nType YES or NO: \n")  # noqa: E501
+    option1 = input("> Hi " + name + "  Are you ready to win your tons of treasures behind the magical door?\nType YES or NO: \n")  # noqa: E501
     if option1 in ('y', 'YES', 'yes', 'Y'):
-        print("Now you have two options to choose your path right or left,")
-        option2 = input("which path would you like to go?\nType Right or Left \n")  # noqa: E501
-        if option2 in ('right', 'Right', 'RIGHT'):
+        print("> Now you have two options to choose your path right or left,")
+        option2 = input("> which path would you like to go?\nType Right or Left \n")  # noqa: E501
+        if option2 in ('  right', 'Right', 'RIGHT'):
             print("This path lead you to the enchanted forest.")
             time.sleep(2)
             print("The trees are chanting the mantra,")
             time.sleep(2)
-            option3 = input("Is that 1. Divine or 2. Power? Type 1 or 2 : \n")
-            if option3 == "1":
+            option3 = input("Is that 1. Divine or 2. mundane? Type 1 or 2 : \n")
+            if option3 == "  1":
                 print("The portal is opening for you,")
                 time.sleep(2)
                 print("you entered the new world full of magical creatures")
                 time.sleep(2)
                 print("Choose one dragon from two that will take you to a ride")  # noqa: E501
                 time.sleep(2)
-                option4 = input("Type 'Blue' or 'White'\n")
+                option4 = input("Type 'Red' or 'White'\n")
                 if option4 in ('white', 'WHITE', 'White'):
                     print("white dragon took you across the seven mountains and seven seas ")  # noqa: E501
                     time.sleep(2)
@@ -99,12 +97,12 @@ def game():
                         print("How do you get the fire to burn and charge?")
                         time.sleep(2)
                         option6 = input("Dragon fire or match box? \n")
-                        if option6 in ('dragon fire', 'dragon', 'DRAGON FIRE' 'DRAGON', 'Dragon'):
+                        if option6 in ('dragon fire', 'dragon', 'DRAGON FIRE' 'DRAGON', 'Dragon'):  # noqa: E501
                             print("Yes you used the dragon fire to burnt the fence and charged the key")  # noqa: E501
                             time.sleep(2)
                             print("CONGRATULATIONS you opened the door")
                             answer = player_won()
-                        elif option6 in ('match box', 'match', 'Match', 'MATCH', 'MATCH BOX'):
+                        elif option6 in ('match box', 'match', 'Match', 'MATCH', 'MATCH BOX'):  # noqa: E501
                             print("sorry you lost the game, play again")
                             answer = player_lost()
                         else:
@@ -112,13 +110,15 @@ def game():
                             print("Play again")
                             answer = invalid()
                     elif option5 in ('2', '4', '7'): 
+                        print("Oops you've chosen the wrong answer")
                         print("sorry you lost the game, play again")
                         answer = player_lost() 
                     else:
                         print("Not a valid option, you lose")
                         print("Play again")
                         answer = invalid()        
-                elif option4 in ('blue', 'BLUE'):
+                elif option4 in ('red', 'Red', 'RED'):
+                    print("Oops you've chosen the wrong answer")
                     print("sorry you lost the game, play again")
                     answer = player_lost()
                 else:
@@ -126,9 +126,8 @@ def game():
                     print("Play again")
                     answer = invalid()
             elif option3 == "2":
-                print("sorry thats the wrong answer")
-                print("")
-                print("You lost the game, play again")
+                print("Oops you've chosen the wrong answer")
+                print("sorry you lost the game, play again") 
                 answer = player_lost()
             else:
                 print("Not a valid option, you lose")
@@ -141,10 +140,11 @@ def game():
                 answer = player_lost()
             elif option7 in ('swim', 'Swim', 'SWIM'):
                 print("you swam across and were eaten by an alligators")
+                print("sorry you lost the game, play again")
                 answer = player_lost()
             else:
                 print("Not a valid option, you lose")
-                print("Play again")
+                print("Play again to win the treasure")
                 answer = invalid()
         else:
             print("Not a valid option, you lose")
@@ -169,8 +169,6 @@ def player_lost():
     Assigned the result of the loser
     """
     answer = "Lose"
-    print("You Lost...")
-    print("Good Bye!")
     return answer
 
 
