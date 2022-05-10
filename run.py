@@ -46,8 +46,8 @@ def game():
 
     print("                    ((*)) ")
     print("                  ((* * *))")
-    print("                ((* * * * *))") 
-    print("              ((* * * * * * *))") 
+    print("                ((* * * * *))")
+    print("              ((* * * * * * *))")
     print("            ((* * * * * * * * *)) ")
     print("            *         :         * ")
     print("            *         :         * ")
@@ -77,7 +77,7 @@ def game():
                 time.sleep(2)
                 print("> Choose one dragon from two that will take you to a ride")  # noqa: E501
                 time.sleep(2)
-                option4 = input("> Type 'Red' or 'White'\n")
+                option4 = input("> Type 'Red' or 'Blue'\n")
                 if option4 in ('red', 'Red', 'RED'):
                     print("> Red dragon took you across the seven mountains and seven seas ")  # noqa: E501
                     time.sleep(2)
@@ -96,7 +96,7 @@ def game():
                         time.sleep(2)
                         print("> How do you get the fire to burn and charge?")
                         time.sleep(2)
-                        option6 = input("> Dragon fire or match box? \n")
+                        option6 = input("> Dragon fire or match box? \n")                                       
                         if option6 in ('dragon fire', 'dragon', 'DRAGON FIRE' 'DRAGON', 'Dragon'):  # noqa: E501
                             print("> Yes you used the dragon fire to burnt the fence and charged the key")  # noqa: E501
                             time.sleep(2)
@@ -109,15 +109,15 @@ def game():
                             print("> Not a valid option, you lose")
                             print("> Play again")
                             answer = invalid()
-                    elif option5 in ('2', '4', '6'): 
+                    elif option5 in ('2', '4', '6'):
                         print("> Oops you've chosen the wrong answer")
                         print("> sorry you lost the game, play again")
-                        answer = player_lost() 
+                        answer = player_lost()
                     else:
                         print("> Not a valid option, you lose")
                         print("> Play again")
-                        answer = invalid()        
-                elif option4 in ('white', 'White', 'WHITE'):
+                        answer = invalid()       
+                elif option4 in ('blue', 'Blue', 'BLUE'):
                     print("> Oops you've chosen the wrong answer")
                     print("> sorry you lost the game, play again")
                     answer = player_lost()
@@ -127,7 +127,7 @@ def game():
                     answer = invalid()
             elif option3 == "2":
                 print("> Oops you've chosen the wrong answer")
-                print("> sorry you lost the game, play again") 
+                print("> sorry you lost the game, play again")
                 answer = player_lost()
             else:
                 print("> Not a valid option, you lose")
