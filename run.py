@@ -2,7 +2,7 @@
 Magical door game
 """
 import time
-from termcolor import colored
+# from termcolor import colored
 import gspread
 from google.oauth2.service_account import Credentials
 
@@ -83,11 +83,11 @@ def game():
                     time.sleep(2)
                     print("One of the seven seas there is a beautiful gigantic fish with glittering gold scales")  # noqa: E501
                     time.sleep(2)
-                    print("That fish holds the key for the magic door.")
+                    print("That fish holds the key for the magical door.")
                     time.sleep(2)
                     print("Find the fish?")
                     option5 = input("select the option - 1,2,3,4,5,6,7:   \n")
-                    if option5 in ('1', '3', '5', '6'):
+                    if option5 in ('1', '3', '5', '7'):
                         print("Hurrah you got the key")
                         time.sleep(2)
                         print("The magical door is surrounded by sharp wooden fence")  # noqa: E501
@@ -109,7 +109,7 @@ def game():
                             print("Not a valid option, you lose")
                             print("Play again")
                             answer = invalid()
-                    elif option5 in ('2', '4', '7'): 
+                    elif option5 in ('2', '4', '6'): 
                         print("Oops you've chosen the wrong answer")
                         print("sorry you lost the game, play again")
                         answer = player_lost() 
