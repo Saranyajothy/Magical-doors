@@ -1,4 +1,4 @@
-# Mgical door
+# Magical door
 Magical door is a Python terminal game. Magical door is an interactive game with an objective to guide the player to navigate through a path to identify hidden treasures. This game is suitable for all age groups and its tests the players’ aptitude, intelligence and a tiny bit of luck.
 
 The player gets through a magical door by entering their name and the game greets the player with interactive questions and options. The options selected by the player determine the players’ luck to stay in the game and to navigate through the path to either become a winner or to loose. For every option chosen, the player will be informed about what to expect in their route.
@@ -10,17 +10,8 @@ The player gets through a magical door by entering their name and the game greet
     - [User's journey](#user's-journey)
 - [Website Structure](#website-structure)
     - [Features](#features)
-- [Website Surface](#website-Surface)
-    - [Wireframes](#wireframes)
-    - [Design Choices](#design-Choice) 
-    - [Colour Scheme](#colour-Scheme)
-    - [Typography](#typography)
 - [Testing](#testing)
     - [Code validation](#code-Validation)
-    - [Light house](#light-house)
-    - [Color contrast checker](#color-contrast-checker)
-    - [Responsive testing](#responsive-testing)
-    - [Accessibility testing](#accessibility-testing)
     - [Manual testing](#manual-testing)
     - [Bug fixing](#bug-fixing)
 - [Technology Used](#technology-Used)
@@ -65,7 +56,6 @@ The player will be greeted with a message “welcome to Magical Door Game”. Th
 - As the key is charged, they player can open the door and will get the options to choose from Gold, Diamond and Platinum as a treasure.
 
 - The player can choose their desired treasure as their prize.
-[!winner](/readme-images/winner.png) 
 
 - If the player chooses, “Left”,
 
