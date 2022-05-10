@@ -41,7 +41,7 @@ def game():
 
     # print(f"{Fore.YELLOW}$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")  # noqa: E501
 
-    print(colored("        Welcome to Magical Door Game" 'cyan', attrs=['bold']))
+    print("        Welcome to Magical Door Game")
     print("       ==============================")
 
     print("                    ((*)) ")
