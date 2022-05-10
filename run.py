@@ -69,7 +69,7 @@ def game():
             time.sleep(2)
             print("> The trees are chanting the mantra,")
             time.sleep(2)
-            option3 = input("> Is that 1. Divine or 2. mundane? Type 1 or 2 : \n")
+            option3 = input("> Is that 1. Divine or 2. mundane? Type 1 or 2 : \n")  # noqa: E501
             if option3 == "1":
                 print("> The portal is opening for you,")
                 time.sleep(2)
@@ -86,7 +86,7 @@ def game():
                     print("> That fish holds the key for the magical door.")
                     time.sleep(2)
                     print("> Find the fish?")
-                    option5 = input("> select the option - 1,2,3,4,5,6,7:   \n")
+                    option5 = input("> select the option - 1,2,3,4,5,6,7: \n")
                     if option5 in ('1', '3', '5', '7'):
                         print("> Hurrah you got the key")
                         time.sleep(2)
@@ -96,7 +96,7 @@ def game():
                         time.sleep(2)
                         print("> How do you get the fire to burn and charge?")
                         time.sleep(2)
-                        option6 = input("> Dragon fire or match box? \n")                                       
+                        option6 = input("> Dragon fire or match box? \n")
                         if option6 in ('dragon fire', 'dragon', 'DRAGON FIRE' 'DRAGON', 'Dragon'):  # noqa: E501
                             print("> Yes you used the dragon fire to burnt the fence and charged the key")  # noqa: E501
                             time.sleep(2)
@@ -116,7 +116,7 @@ def game():
                     else:
                         print("> Not a valid option, you lose")
                         print("> Play again")
-                        answer = invalid()       
+                        answer = invalid()
                 elif option4 in ('blue', 'Blue', 'BLUE'):
                     print("> Oops you've chosen the wrong answer")
                     print("> sorry you lost the game, play again")
@@ -153,7 +153,7 @@ def game():
     elif option1 in ('n', 'NO', 'no', 'No'):
         print("> Sorry you missed the treasure to your family,")
         print("> see you next time")
-        answer = player_lost()
+        answer = player_quit()
     else:
         print("> Not a valid option, you lose")
         print("> Play again")
@@ -189,6 +189,14 @@ def player_won():
         return answer
 
 
+def player_quit():
+    """
+    when the player want to quit the game
+    """
+    answer = "Quit"
+    return answer
+
+
 def invalid():
     """
     when the player enter the invalid answer
@@ -206,4 +214,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

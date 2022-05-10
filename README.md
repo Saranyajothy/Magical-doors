@@ -1,12 +1,12 @@
 # Mgical door
-Magical door is a game site designed for users above 10 years old and there is no higher age limit. It has five categories that allow visitors to test their knowledge in relevant topics. This is an educational and informative quiz that can be played for fun or brain storming session.
-Each category has five questions and allows user to pick the correct answer from four choices. For each question, the user gets one chance to choose the correct answer and score will displayed as they progress. Each correct answer carries 10 points and there is no point or a penalty for incorrect answer. A final scored will be awarded after completing five questions for respective category.
+Magical door is a Python terminal game. Magical door is an interactive game with an objective to guide the player to navigate through a path to identify hidden treasures. This game is suitable for all age groups and its tests the players’ aptitude, intelligence and a tiny bit of luck.
 
-![responsive](/readme-images/responsive.png)
-[click here to view the site](https://saranyajothy.github.io/Quiz/)
+The player gets through a magical door by entering their name and the game greets the player with interactive questions and options. The options selected by the player determine the players’ luck to stay in the game and to navigate through the path to either become a winner or to loose. For every option chosen, the player will be informed about what to expect in their route.
+
+[click here to view the site](https://git.heroku.com/magical-doors.git)
 # Table of contents
 - [User Experience](#user-experience)
-    - [The target audience](#target-audience)
+- [How to play](#how-to-play)
     - [User's journey](#user's-journey)
 - [Website Structure](#website-structure)
     - [Features](#features)
@@ -30,97 +30,68 @@ Each category has five questions and allows user to pick the correct answer from
 ____
 
 # User experience
-## User's journey
-A user should go through the site like a purposeful journey and to ensure this,
+### First Time Visitor Goals
+As a First Time User, I want to explore the game. I can see at the very beginning, the game is called Magical Door and it interacts with me with written sentences on the screen.
+As a First Time User, I want to understand how to play the game. After typing in my name, the game interacts with my name which is good to address the player during the game, and gives me options to choose upon how I wish to play the game. I know exactly what is expected of me, what I need to do to get the treasure in this game, and how I can navigate through it.
+As a First Time User, I will get an experience of what to expect with the options chosen. The game also explains what they could experience with the options they have chosen.
+As a First Time User, I want feedback on whether I have chosen the best option to stay in the game and to navigate through different stages or section. The game communicates with me at every stage and explains me what is on the route.  
+As a First Time User, I want to know how to become a winner and navigate through each section to become a winner at the end and to get the treasure of the game Magical door.
+As a First Time User, I want to be communicated with the progress I made at every stage of the game, it tells me if I have cleared the stage and gives me an appropriate message for each occasion. I want to know, if I have lost or won the game.
+### Returning / Frequent Visitor Goals
+As a Returning / Frequent Visitor, I want to be able to play the game again and to learn the best options to stay in the game and to learn how to win.
 
-- The user needs to quickly know the purpose on the site.
-- The user should be able to spontaneously and easily navigate through the site.
-- The user will get a chance to analayis their general knowledge and memory power. 
-- The user will find the information in plain and common language.
-- The user will find four options to choose the correct answers.
-- The user will find the questions and choices are very clear to read and play. 
-## The target audience
-- To engage children above 10 years old and adults with an interactive quiz in different categories
-- To create an informative and educational learning experience.
-- To make a platform for educational resource for parents, teachers, schools, office and social purposes.
-- To be fun and engaging.
-# Website structure
-## Features
-### Category quiz
+# How to play
+The player will be greeted with a message “welcome to Magical Door Game”. The game prompts the player to enter his/her name.  A player starts to play Magical door by typing their name and they will be greeted and given two options to proceed with the game, Yes or No.
 
-- This is the main page of the website which includes the category. It is responsive and includes to begin the quiz.
-- The main page of the quiz has five categories. Each category has related to different topics.
-- The purpose of this page is to allow the user to select the quiz options easily to get to their desired destination.
-- Five categories are Human body, Yoga, Food, Countries and Olympics. These categories are interesting for the users to play the quiz.
-### Main page
-![main-page](/readme-images/main-page.png)
-### 1st category - Human body
-![human-img](/readme-images/human-img.png)
-### 2nd category - Yoga
-![yoga-img](/readme-images/yoga-img.png)
-### 3rd category - Food
-![food-img](/readme-images/food-img.png)
-### 4th category - Countries
-![countries](/readme-images/countries-img.png)
-### 5th category - Olympic
-![olympic-img](/readme-images/olympic-img.png)
-### Progressbar and score
-![score](/readme-images/score.png)
-- Each quiz page contains question count on the left top of the screen with progressbar and score count on the right top of the page.
-- Each category has five questions with four choices. once the answer clicked it pops the next question.
+- The game won’t proceed if the player chooses the option “No”.
 
-- correct answers notify by green color and wrong answers shown by red color.
+- If the player agrees to play by typing “Yes”, it gives further two options to select a path, Right or left.
 
-- All categories have home button that connect the main page.  
-- Each category has different background images to enhance the page and looks pleasing and colorful to the players eyes.
-### End game
-![endgame-img](/readme-images/endgame-img.png)
-# Website Surface
-## Wireframes
-### Mainpage
-![wireframe-mp-d](/readme-images/wirframe-mp-d.png)
-![wireframe-c-d](/readme-images/wireframe-c-d.png)
-### Mobile
-![wireframe-mp-m](/readme-images/wireframe-mp-m.png)
-![wireframe-c-m](/readme-images/wireframe-c-m.png)
-## Design Choices
-### Colour Scheme
-![main-cs](/readme-images/main-cs.png)
-![collage](/readme-images/collage.jpg)
-![mainpage-cs](/readme-images/mainpage-cs.png)
-![quiz.png](/readme-images/quiz.png)
-### Typography
-There were one font used in this website.[Raleway](https://fonts.google.com/specimen/Raleway?query=raleway). The raleway is an elegant sans-serif typeface familyis font is very clear and perfect for the game.
-# Testing
-## Code validation
-### Html
-#### Main page
-![index-html](/readme-images/index-html.png)
-#### category page
-![category-html](/readme-images/category-html.png)
-#### End page
-![endgame-html](/readme-images/endgame-html.png)
-### Css
-#### Main page
-![style-css](/readme-images/style-css.png)
-#### category page
-![category-css](/readme-images/category-css.png)
-#### End page
-![end-game-css](/readme-images/end-game-css.png)
-### javascript
-![js-valid](/readme-images/js-valid.png)
-![js-valid-1](/readme-images/js-valid-1.png)
-## Light house
-### Desktop
-![lighthouse-d](/readme-images/lighthouse-d.png)
-### Mobile 
-![lighthouse-m](/readme-images/lighthouse-m.png)
-## Color contrast checker
-![color-checker](/readme-images/color-checker.png)
-## Responsive testing
-Responsiveness was checked using Google Chrome Dev Tools, desktop, mobile, tablet and laptop for all screen sizes with optimum resolutions.
-## Accessibility testing
-![ally-cc](/readme-images/ally-cc.png)
+- If the player chooses, “Right”,
+
+- The path to the “Right” will lead to enchanted forest and gives some more descriptions. It asks the player whether the Mantras chanted are 1. Divine or 2.Mundane. If they choose Mundane, they lose the game.
+
+- If they choose, Divine, they will proceed to next level, which will open the portal to enter the new magical world with full of magical creatures.
+
+- The game gives further two options to choose between red or white dragon to take a ride to magical road. If the choose White Dragon, they are out of the game.
+
+- If they choose Red Dragon, it will take the player across seven mountains and seven seas. One of the seven seas has a beautiful giant fish with glittering gold scales which hold the key for magical door. They player will be given seven options, such as numbers 1 to 7 and the odd numbers will get a key, which needs to be charged to proceed to next level. If they choose even numbers, they lose the game.
+
+- The magical door has sharp wooden fence. The player needs to burn the fence and also needs to charge it with fire. The player is now given options to choose between, Dragon’s fire or match box.
+
+- If the player choose, Match box they will lose the game. If they choose, dragon fire they can burn the fence and also charge the key.
+
+- As the key is charged, they player can open the door and will get the options to choose from Gold, Diamond and Platinum as a treasure.
+
+- The player can choose their desired treasure as their prize.
+
+- If the player chooses, “Left”,
+
+- The path to the “Left” will lead to a river and they play need to choose between the options to swim or walk around.
+
+- If they choose to walk around, they will be left with no water and food, so eventually they will die.
+
+- If they choose to swim, they will be eaten by Aligator.
+
+- This means, the path to the “Left” is not the road to win the treasure.
+
+# Features
+
+## Existing Features
+
+The game is designed to enter a magical door and to navigate through some options to get the treasure. During this navigation, they might lose or win.  
+Screenshot of Game introduction
+Screenshot of player choosing path to the “Right”.
+
+## Future Features
+
+To add interactive voice.
+To make the game more adventurous and interesting options to explore.
+
+
+# Code validation
+
+
 ## Manual testing
 Manual testing was carried out in addition to automated process.
 
