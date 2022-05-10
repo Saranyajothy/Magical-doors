@@ -65,98 +65,98 @@ def game():
         print("> Now you have two options to choose your path right or left,")
         option2 = input("> which path would you like to go?\nType Right or Left \n")  # noqa: E501
         if option2 in ('right', 'Right', 'RIGHT'):
-            print("This path lead you to the enchanted forest.")
+            print("> This path lead you to the enchanted forest.")
             time.sleep(2)
-            print("The trees are chanting the mantra,")
+            print("> The trees are chanting the mantra,")
             time.sleep(2)
-            option3 = input("Is that 1. Divine or 2. mundane? Type 1 or 2 : \n")
-            if option3 == "  1":
-                print("The portal is opening for you,")
+            option3 = input("> Is that 1. Divine or 2. mundane? Type 1 or 2 : \n")
+            if option3 == "1":
+                print("> The portal is opening for you,")
                 time.sleep(2)
-                print("you entered the new world full of magical creatures")
+                print("> you entered the new world full of magical creatures")
                 time.sleep(2)
-                print("Choose one dragon from two that will take you to a ride")  # noqa: E501
+                print("> Choose one dragon from two that will take you to a ride")  # noqa: E501
                 time.sleep(2)
-                option4 = input("Type 'Red' or 'White'\n")
+                option4 = input("> Type 'Red' or 'White'\n")
                 if option4 in ('red', 'Red', 'RED'):
-                    print("Red dragon took you across the seven mountains and seven seas ")  # noqa: E501
+                    print("> Red dragon took you across the seven mountains and seven seas ")  # noqa: E501
                     time.sleep(2)
-                    print("One of the seven seas there is a beautiful gigantic fish with glittering gold scales")  # noqa: E501
+                    print("> One of the seven seas there is a beautiful gigantic fish with glittering gold scales")  # noqa: E501
                     time.sleep(2)
-                    print("That fish holds the key for the magical door.")
+                    print("> That fish holds the key for the magical door.")
                     time.sleep(2)
-                    print("Find the fish?")
-                    option5 = input("select the option - 1,2,3,4,5,6,7:   \n")
+                    print("> Find the fish?")
+                    option5 = input("> select the option - 1,2,3,4,5,6,7:   \n")
                     if option5 in ('1', '3', '5', '7'):
-                        print("Hurrah you got the key")
+                        print("> Hurrah you got the key")
                         time.sleep(2)
-                        print("The magical door is surrounded by sharp wooden fence")  # noqa: E501
+                        print("> The magical door is surrounded by sharp wooden fence")  # noqa: E501
                         time.sleep(2)
-                        print("Only way to reach the door and charge the key is to burn the fence")  # noqa: E501
+                        print("> Only way to reach the door and charge the key is to burn the fence")  # noqa: E501
                         time.sleep(2)
-                        print("How do you get the fire to burn and charge?")
+                        print("> How do you get the fire to burn and charge?")
                         time.sleep(2)
-                        option6 = input("Dragon fire or match box? \n")
+                        option6 = input("> Dragon fire or match box? \n")
                         if option6 in ('dragon fire', 'dragon', 'DRAGON FIRE' 'DRAGON', 'Dragon'):  # noqa: E501
-                            print("Yes you used the dragon fire to burnt the fence and charged the key")  # noqa: E501
+                            print("> Yes you used the dragon fire to burnt the fence and charged the key")  # noqa: E501
                             time.sleep(2)
-                            print("CONGRATULATIONS you opened the door")
+                            print("> CONGRATULATIONS you opened the door")
                             answer = player_won()
                         elif option6 in ('match box', 'match', 'Match', 'MATCH', 'MATCH BOX'):  # noqa: E501
-                            print("sorry you lost the game, play again")
+                            print("> sorry you lost the game, play again")
                             answer = player_lost()
                         else:
-                            print("Not a valid option, you lose")
-                            print("Play again")
+                            print("> Not a valid option, you lose")
+                            print("> Play again")
                             answer = invalid()
                     elif option5 in ('2', '4', '6'): 
-                        print("Oops you've chosen the wrong answer")
-                        print("sorry you lost the game, play again")
+                        print("> Oops you've chosen the wrong answer")
+                        print("> sorry you lost the game, play again")
                         answer = player_lost() 
                     else:
-                        print("Not a valid option, you lose")
-                        print("Play again")
+                        print("> Not a valid option, you lose")
+                        print("> Play again")
                         answer = invalid()        
                 elif option4 in ('red', 'Red', 'RED'):
-                    print("Oops you've chosen the wrong answer")
-                    print("sorry you lost the game, play again")
+                    print("> Oops you've chosen the wrong answer")
+                    print("> sorry you lost the game, play again")
                     answer = player_lost()
                 else:
-                    print("Not a valid option, you lose")
-                    print("Play again")
+                    print("> Not a valid option, you lose")
+                    print("> Play again")
                     answer = invalid()
             elif option3 == "2":
-                print("Oops you've chosen the wrong answer")
-                print("sorry you lost the game, play again") 
+                print("> Oops you've chosen the wrong answer")
+                print("> sorry you lost the game, play again") 
                 answer = player_lost()
             else:
-                print("Not a valid option, you lose")
-                print("Play again")
+                print("> Not a valid option, you lose")
+                print("> Play again")
                 answer = invalid()
         elif option2 in ('Left', 'left', 'LEFT'):
-            option7 = input("you come to the river, you can walk around or you can swim across the river? walk/swim: \n")  # noqa: E501
+            option7 = input("> You come to the river, you can walk around or you can swim across the river? walk/swim: \n")  # noqa: E501
             if option7 in ('walk', 'Walk', 'WALK'):
-                print("you walked for my miles and ran out of water and food, you died out of starving")  # noqa: E501
+                print("> You walked for my miles and ran out of water and food, you died out of starving")  # noqa: E501
                 answer = player_lost()
             elif option7 in ('swim', 'Swim', 'SWIM'):
-                print("you swam across and were eaten by an alligators")
-                print("sorry you lost the game, play again")
+                print("> You swam across and were eaten by an alligators")
+                print("> Sorry you lost the game, play again")
                 answer = player_lost()
             else:
-                print("Not a valid option, you lose")
-                print("Play again to win the treasure")
+                print("> Not a valid option, you lose")
+                print("> Play again to win the treasure")
                 answer = invalid()
         else:
-            print("Not a valid option, you lose")
-            print("Play again")
+            print("> Not a valid option, you lose")
+            print("> Play again")
             answer = invalid()
     elif option1 in ('n', 'NO', 'no', 'No'):
-        print("Sorry you missed the treasure to your family,")
-        print("see you next time")
+        print("> Sorry you missed the treasure to your family,")
+        print("> see you next time")
         answer = player_lost()
     else:
-        print("Not a valid option, you lose")
-        print("Play again")
+        print("> Not a valid option, you lose")
+        print("> Play again")
         answer = invalid()
 
     user = [name, answer]
@@ -177,14 +177,14 @@ def player_won():
     once the player opened the door they have the option to choose their
     treasures
     """
-    answer = input("Choose your treasure: Gold, Diamond, Platinum : \n ")
+    answer = input("> Choose your treasure: Gold, Diamond, Platinum : \n ")
     if answer in ('Gold', 'Diamond', 'Platinum', 'gold', 'diamond', 'platinum'):  # noqa: E501
         print()
-        print("WELL DONE, You're the WINNER!")
+        print("> WELL DONE, You're the WINNER!")
         time.sleep(2)
-        print("Take your treasure to your home and enjoy!!!")
+        print("> Take your treasure to your home and enjoy!!!")
         time.sleep(2)
-        print("Hope you enjoyed the game")
+        print("> Hope you enjoyed the game")
         time.sleep(2)
         return answer
 
@@ -207,4 +207,3 @@ def main():
 if __name__ == "__main__":
     main()
 
-# colorama.init(autoreset=True)
