@@ -117,7 +117,7 @@ def game():
                         print("> Not a valid option, you lose")
                         print("> Play again")
                         answer = invalid()        
-                elif option4 in ('red', 'Red', 'RED'):
+                elif option4 in ('white', 'White', 'WHITE'):
                     print("> Oops you've chosen the wrong answer")
                     print("> sorry you lost the game, play again")
                     answer = player_lost()
